@@ -16,6 +16,8 @@ module.exports = {
           '32px',
           { letterSpacing: '-0.36px', lineHeight: '42px' },
         ],
+        sectionBody: ['15px', { lineHeight: '30px' }],
+        sectionTag: ['13px', { lineHeight: '30px' }],
         btnLabel: ['12px', { letterSpacing: '2px', lineHeight: '14px' }],
       },
       fontFamily: {

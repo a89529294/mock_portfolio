@@ -1,12 +1,24 @@
+/* eslint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
   .section-title {
-    @apply font-bold text-sectionTitle font-title;
+    @apply font-bold text-sectionTitle font-title text-gray-dark-blue;
+  }
+  .section-body {
+    @apply font-normal text-sectionBody font-body text-gray-dark-blue text-opacity-80;
+  }
+  .section-tags {
+    @apply font-bold text-sectionTag font-body text-desaturated-cyan;
   }
   .btn-label {
     @apply font-normal text-btnLabel font-body;
   }
+}
+
+* {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }

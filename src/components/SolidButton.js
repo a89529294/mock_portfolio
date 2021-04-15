@@ -6,8 +6,8 @@ export default function SolidButton({ label }) {
       <div className="flex items-center justify-center w-12 h-12 bg-black bg-opacity-10">
         <img src={downArrow} alt="down-arrow" />
       </div>
-      <div className="flex items-center justify-center flex-grow h-full text-white btn-label">
-        {label}
+      <div className="flex items-center justify-center flex-grow h-full">
+        <span className="text-white btn-label ">{label}</span>
       </div>
     </button>
   );
