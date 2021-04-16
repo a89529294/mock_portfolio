@@ -15,6 +15,9 @@
   .btn-label {
     @apply font-normal text-btnLabel font-body;
   }
+  .input {
+    @apply font-normal font-body text-sectionTag text-gray-dark-blue;
+  }
 }
 
 * {

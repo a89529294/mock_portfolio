@@ -1,17 +1,17 @@
 import ProjectDetail from '../components/ProjectDetail';
 
-import heroImage from '../assets/detail/mobile/image-manage-hero@2x.jpg';
-import previewOne from '../assets/detail/mobile/image-manage-preview-1@2x.jpg';
-import previewTwo from '../assets/detail/mobile/image-manage-preview-2@2x.jpg';
+import heroImage from '../assets/detail/mobile/image-insure-hero@2x.jpg';
+import previewOne from '../assets/detail/mobile/image-insure-preview-1@2x.jpg';
+import previewTwo from '../assets/detail/mobile/image-insure-preview-2@2x.jpg';
 
-export default function ManageDetail() {
+export default function InsureDetail() {
   return (
     <ProjectDetail
       heroImage={heroImage}
-      heroTitle="Manage"
-      heroBody={`This project required me to build a fully responsive landing page to the designs provided. 
-      I used HTML5, along with CSS Grid and JavaScript for the areas that required interactivity, 
-      such as the testimonial slider.`}
+      heroTitle="Insure"
+      heroBody={`This was a small project which mostly consisted of HTML and CSS. 
+      I built a fully-responsive landing page. The only JavaScript this project required was to 
+      enable the toggling of the mobile navigation.`}
       tags={[
         'Interaction Design',
         'Front End Development',
@@ -27,8 +27,8 @@ export default function ManageDetail() {
       I’ve learned something new with each project, helping me to improve and adapt my style.`}
       previewImageOne={previewOne}
       previewImageTwo={previewTwo}
-      previousProject={{ link: '/portfolio/fylo', name: 'Fylo' }}
-      nextProject={{ link: '/portfolio/bookmark', name: 'Bookmark' }}
+      previousProject={{ link: '/portfolio/bookmark', name: 'Bookmark' }}
+      nextProject={{ link: '/portfolio/fylo', name: 'Fylo' }}
     />
   );
 }

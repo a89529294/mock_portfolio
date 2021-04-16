@@ -1,7 +1,7 @@
 import manageImage from '../assets/portfolio/mobile/image-portfolio-manage@2x.jpg';
 import bookmarkImage from '../assets/portfolio/mobile/image-portfolio-bookmark@2x.jpg';
 import insureImage from '../assets/portfolio/mobile/image-portfolio-insure@2x.jpg';
-import flyoImage from '../assets/portfolio/mobile/image-portfolio-fylo@2x.jpg';
+import fyloImage from '../assets/portfolio/mobile/image-portfolio-fylo@2x.jpg';
 
 import SectionWithImage from '../components/SectionWithImage';
 
@@ -36,13 +36,13 @@ export default function Porfolio() {
         linkURL="/portfolio/insure"
       />
       <SectionWithImage
-        image={flyoImage}
+        image={fyloImage}
         title="Fylo"
         body={`This project was built in pure HTML and CSS. 
           I had mobile and desktop designs to work to and built it so that it was fully-responsive. 
           I took a mobile-first approach and used modern CSS like Flexbox and Grid for layout purposes.`}
         btnLabel="VIEW PROJECT"
-        linkURL="/portfolio/flyo"
+        linkURL="/portfolio/fylo"
       />
     </div>
   );

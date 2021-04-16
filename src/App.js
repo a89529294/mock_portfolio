@@ -6,6 +6,10 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Porfolio from './routes/Portfolio';
 import ManageDetail from './routes/ManageDetail';
+import BookmarkDetail from './routes/BookmarkDetail';
+import InsureDetail from './routes/InsureDetail';
+import FyloDetail from './routes/FyloDetail';
+import ContactMePage from './routes/ContactMePage';
 
 function App() {
   const location = useLocation();
@@ -15,7 +19,7 @@ function App() {
   }, [location]);
 
   return (
-    <div className="App">
+    <>
       <Navbar />
       <Switch>
         <Route exact path="/">
@@ -27,9 +31,21 @@ function App() {
         <Route exact path="/portfolio/manage">
           <ManageDetail />
         </Route>
+        <Route exact path="/portfolio/bookmark">
+          <BookmarkDetail />
+        </Route>
+        <Route exact path="/portfolio/insure">
+          <InsureDetail />
+        </Route>
+        <Route exact path="/portfolio/fylo">
+          <FyloDetail />
+        </Route>
+        <Route exact path="/contact">
+          <ContactMePage />
+        </Route>
       </Switch>
       <Footer />
-    </div>
+    </>
   );
 }
 

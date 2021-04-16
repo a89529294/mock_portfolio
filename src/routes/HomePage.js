@@ -12,7 +12,7 @@ const Hero = () => {
       <h1 className="mt-6 mb-8 section-title">
         Hey, I’m Albert Chang and I love building beautiful websites
       </h1>
-      <SolidButton label="ABOUT ME" />
+      <SolidButton label="ABOUT ME" showImage={true} />
     </div>
   );
 };

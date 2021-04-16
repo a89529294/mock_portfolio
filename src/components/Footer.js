@@ -15,7 +15,7 @@ export default function Footer() {
         <Link to="/portfolio">PORTFOLIO</Link>
       </button>
       <button className="block pt-8 mx-auto text-white btn-label">
-        CONTACT ME
+        <Link to="/contact">CONTACT ME</Link>
       </button>
       <div className="inline-flex pt-10 space-x-4">
         <img src={github} alt="github logo" />
