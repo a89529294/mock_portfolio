@@ -14,5 +14,5 @@ npm install -> npm start
 
 ### TODO
 
-1. TBD
+1. Tablet and laptop view, right now only mobile is done.
 
