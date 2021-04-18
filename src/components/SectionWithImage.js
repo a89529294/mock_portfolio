@@ -1,43 +1,55 @@
 import Divider from './Divider';
 import OutlineButton from './OutlineButton';
 
-import twitterBlack from '../assets/icons/twitter-black.svg';
-import linkedinBlack from '../assets/icons/linkedin-black.svg';
-import githubBlack from '../assets/icons/github-black.svg';
-
 export default function SectionWithImage({
   image,
   title,
   body,
   tags,
-  showSocialMedia = false,
   btnLabel,
   linkURL,
+  widthsForTablet = [],
+  imageYPadding = false,
+  lineupImageBottomWithButton = false,
+  swap = false,
 }) {
   return (
-    <>
-      {image ? <img src={image} alt="profile" className="w-full mb-8" /> : null}
-      <Divider />
-      <div className="py-6">
-        <h1 className="mb-8 section-title">{title}</h1>
-        <p className="mb-6 section-body">{body}</p>
-        {tags ? (
-          <p className="mb-6 section-tags">
-            {tags.map((tag, i) => {
-              return i === tags.length - 1 ? tag : tag + ' / ';
-            })}
-          </p>
-        ) : null}
-        {btnLabel ? <OutlineButton label={btnLabel} linkURL={linkURL} /> : null}
-        {showSocialMedia && (
-          <div className="flex space-x-4">
-            <img src={githubBlack} alt="github logo" />
-            <img src={twitterBlack} alt="twitter logo" />
-            <img src={linkedinBlack} alt="linkedin logo" />
-          </div>
-        )}
+    <div
+      className={`sm:flex sm:justify-between ${
+        swap ? 'sm:flex-row-reverse' : 'sm:flex-row'
+      }`}
+    >
+      {image ? (
+        <img
+          src={image}
+          alt="profile"
+          className={`w-full mb-8 sm:${widthsForTablet[0]} ${
+            imageYPadding ? 'sm:my-12' : 'sm:mb-0'
+          }`}
+        />
+      ) : null}
+      <div className={`sm:${widthsForTablet[1]}`}>
+        <Divider />
+        <div
+          className={`py-6 sm:h-full sm:flex sm:flex-col sm:justify-between ${
+            lineupImageBottomWithButton ? 'sm:pb-12' : ''
+          } `}
+        >
+          <h1 className="mb-8 section-title sm:mb-0">{title}</h1>
+          <p className="mb-6 section-body sm:mb-0 ">{body}</p>
+          {tags ? (
+            <p className="mb-6 section-tags">
+              {tags.map((tag, i) => {
+                return i === tags.length - 1 ? tag : tag + ' / ';
+              })}
+            </p>
+          ) : null}
+          {btnLabel ? (
+            <OutlineButton label={btnLabel} linkURL={linkURL} />
+          ) : null}
+        </div>
+        <Divider />
       </div>
-      <Divider />
-    </>
+    </div>
   );
 }

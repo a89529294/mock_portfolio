@@ -16,6 +16,9 @@ export default function Porfolio() {
         such as the testimonial slider.`}
         btnLabel="VIEW PROJECT"
         linkURL="/portfolio/manage"
+        widthsForTablet={['w-1/2', 'w-3/8']}
+        imageYPadding={true}
+        lineupImageBottomWithButton={true}
       />
       <SectionWithImage
         image={bookmarkImage}
@@ -25,6 +28,10 @@ export default function Porfolio() {
         such as the features section.`}
         btnLabel="VIEW PROJECT"
         linkURL="/portfolio/bookmark"
+        widthsForTablet={['w-1/2', 'w-3/8']}
+        imageYPadding={true}
+        lineupImageBottomWithButton={true}
+        swap={true}
       />
       <SectionWithImage
         image={insureImage}
@@ -34,6 +41,9 @@ export default function Porfolio() {
           The only JavaScript this project required was to enable the toggling of the mobile navigation.`}
         btnLabel="VIEW PROJECT"
         linkURL="/portfolio/insure"
+        widthsForTablet={['w-1/2', 'w-3/8']}
+        imageYPadding={true}
+        lineupImageBottomWithButton={true}
       />
       <SectionWithImage
         image={fyloImage}
@@ -43,6 +53,10 @@ export default function Porfolio() {
           I took a mobile-first approach and used modern CSS like Flexbox and Grid for layout purposes.`}
         btnLabel="VIEW PROJECT"
         linkURL="/portfolio/fylo"
+        widthsForTablet={['w-1/2', 'w-3/8']}
+        imageYPadding={true}
+        lineupImageBottomWithButton={true}
+        swap={true}
       />
     </div>
   );

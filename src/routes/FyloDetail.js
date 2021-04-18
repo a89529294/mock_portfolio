@@ -1,13 +1,18 @@
 import ProjectDetail from '../components/ProjectDetail';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 import heroImage from '../assets/detail/mobile/image-fylo-hero@2x.jpg';
+import heroImageTablet from '../assets/detail/tablet/image-fylo-hero@2x.jpg';
 import previewOne from '../assets/detail/mobile/image-fylo-preview-1@2x.jpg';
+import previewOneTablet from '../assets/detail/tablet/image-fylo-preview-1@2x.jpg';
 import previewTwo from '../assets/detail/mobile/image-fylo-preview-2@2x.jpg';
+import previewTwoTablet from '../assets/detail/tablet/image-fylo-preview-2@2x.jpg';
 
 export default function FyloDetail() {
+  const isTablet = useMediaQuery('(min-width: 640px) and (max-width: 1023px)');
   return (
     <ProjectDetail
-      heroImage={heroImage}
+      heroImage={isTablet ? heroImageTablet : heroImage}
       heroTitle="Fylo"
       heroBody={`This project was built in pure HTML and CSS. 
       I had mobile and desktop designs to work to and built it so that it was fully-responsive. 
@@ -19,8 +24,8 @@ export default function FyloDetail() {
       screen sizes. 
       Creating these projects has helped me refine my workflow and solve real-world coding problems. 
       I’ve learned something new with each project, helping me to improve and adapt my style.`}
-      previewImageOne={previewOne}
-      previewImageTwo={previewTwo}
+      previewImageOne={isTablet ? previewOneTablet : previewOne}
+      previewImageTwo={isTablet ? previewTwoTablet : previewTwo}
       previousProject={{ link: '/portfolio/insure', name: 'Insure' }}
       nextProject={{ link: '/portfolio/manage', name: 'Manage' }}
     />

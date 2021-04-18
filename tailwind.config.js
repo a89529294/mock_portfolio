@@ -25,6 +25,9 @@ module.exports = {
         title: ['"Ibarra Real Nova"', 'serif'],
         body: ['"Public Sans"', 'sans-serif'],
       },
+      width: {
+        '3/8': '37.5%',
+      },
     },
   },
   variants: {

@@ -3,10 +3,46 @@ import { Link } from 'react-router-dom';
 import ContactMe from './ContactMe';
 import Divider from './Divider';
 import VerticalDivider from './VerticalDivider';
+import OutlineButton from './OutlineButton';
 
-import SectionWithImage from './SectionWithImage';
 import leftArrow from '../assets/icons/arrow-left.svg';
 import rightArrow from '../assets/icons/arrow-right.svg';
+
+const Hero = ({ image, title, body, tags, btnLabel, linkURL }) => {
+  return (
+    <div>
+      <img src={image} alt="profile" className="w-full mb-8" />
+
+      <Divider />
+      <div className="py-6 sm:flex sm:justify-between sm:space-x-1 sm:py-8">
+        <div className="hidden sm:block sm:w-1/2">
+          <h1 className="mb-8 section-title sm:mb-4">{title}</h1>
+          <p className="mb-6 section-tags sm:mb-4">
+            {tags.map((tag, i) => {
+              return i === tags.length - 1 ? tag : tag + ' / ';
+            })}
+          </p>
+          <OutlineButton label={btnLabel} linkURL={linkURL} width="w-44" />
+        </div>
+        <p className="hidden mb-6 section-body sm:mb-0 sm:block sm:w-1/2">
+          {body}
+        </p>
+
+        <div className="sm:hidden">
+          <h1 className="mb-8 section-title sm:mb-0">{title}</h1>
+          <p className="mb-6 section-body sm:mb-0 ">{body}</p>
+          <p className="mb-6 section-tags">
+            {tags.map((tag, i) => {
+              return i === tags.length - 1 ? tag : tag + ' / ';
+            })}
+          </p>
+          <OutlineButton label={btnLabel} linkURL={linkURL} width="w-44" />
+        </div>
+      </div>
+      <Divider />
+    </div>
+  );
+};
 
 const Section = ({ title, children }) => (
   <>
@@ -72,7 +108,7 @@ export default function ProjectDetail({
 }) {
   return (
     <div className="px-8 ">
-      <SectionWithImage
+      <Hero
         image={heroImage}
         title={heroTitle}
         body={heroBody}
