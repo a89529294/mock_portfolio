@@ -19,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="relative flex items-center justify-between p-8 pb-10 sm:px-10 sm:pt-16 sm:pb-12">
+    <div className="relative flex items-center justify-between p-8 pb-10 sm:px-10 sm:pt-16 sm:pb-12 lg:pt-16 lg:pb-14 lg:px-40">
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>

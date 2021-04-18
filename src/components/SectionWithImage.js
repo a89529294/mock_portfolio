@@ -9,6 +9,7 @@ export default function SectionWithImage({
   btnLabel,
   linkURL,
   widthsForTablet = [],
+  widthsForDesktop = [],
   imageYPadding = false,
   lineupImageBottomWithButton = false,
   swap = false,
@@ -25,10 +26,10 @@ export default function SectionWithImage({
           alt="profile"
           className={`w-full mb-8 sm:${widthsForTablet[0]} ${
             imageYPadding ? 'sm:my-12' : 'sm:mb-0'
-          }`}
+          } lg:${widthsForDesktop[0]}`}
         />
       ) : null}
-      <div className={`sm:${widthsForTablet[1]}`}>
+      <div className={`sm:${widthsForTablet[1]} lg:${widthsForDesktop[1]}`}>
         <Divider />
         <div
           className={`py-6 sm:h-full sm:flex sm:flex-col sm:justify-between ${
