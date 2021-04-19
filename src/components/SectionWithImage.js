@@ -11,8 +11,8 @@ function SectionWithImage(
     tags,
     btnLabel,
     linkURL,
-    widthsForTablet = [],
-    widthsForDesktop = [],
+    imgStyle,
+    sectionStyle,
     imageYPadding = false,
     lineupImageBottomWithButton = false,
     swap = false,
@@ -30,12 +30,12 @@ function SectionWithImage(
         <img
           src={image}
           alt="profile"
-          className={`w-full mb-8 sm:${widthsForTablet[0]} ${
+          className={`w-full mb-8 ${
             imageYPadding ? 'sm:my-12' : 'sm:mb-0'
-          } lg:${widthsForDesktop[0]}`}
+          } ${imgStyle}`}
         />
       ) : null}
-      <div className={`sm:${widthsForTablet[1]} lg:${widthsForDesktop[1]}`}>
+      <div className={`${sectionStyle}`}>
         <Divider />
         <div
           className={`py-6 sm:h-full sm:flex sm:flex-col sm:justify-between ${

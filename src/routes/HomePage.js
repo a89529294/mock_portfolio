@@ -69,8 +69,8 @@ export default function HomePage() {
           run or cycling. I’d love you to check out my work.`}
         btnLabel="GO TO PORTFOLIO"
         linkURL="/portfolio"
-        widthsForTablet={['w-5/12', 'w-1/2']}
-        widthsForDesktop={['w-1/2', 'w-3/8']}
+        imgStyle="sm:w-5/12 lg:w-1/2"
+        sectionStyle="sm:w-1/2 lg:w-3/8"
         ref={ref}
       />
       <ContactMe />
