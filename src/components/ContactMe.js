@@ -16,7 +16,7 @@ export default function ContactMe() {
   return (
     <div className="pt-20 pb-20">
       <div className="sm:flex sm:items-center">
-        <h1 className="mb-10 text-center whitespace-pre-line section-title">
+        <h1 className="mb-10 text-center whitespace-pre-line section-title text-sectionTitleMedium">
           {str}
         </h1>
         <div className="hidden w-8 sm:block" />

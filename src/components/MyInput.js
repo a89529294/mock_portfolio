@@ -1,14 +1,13 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
-import SolidButton from './SolidButton';
-
-const MyInput = ({
+export default function MyInput({
   label,
   placeholder,
   useTextArea = false,
   state,
   setState,
-}) => {
+  mt = 'mt-6',
+}) {
   const [errorState, setErrorState] = useState(false);
 
   const handleInputBlur = (e) => {
@@ -23,7 +22,7 @@ const MyInput = ({
     <div>
       <label
         htmlFor={label}
-        className="block mt-6 mb-2 font-bold text-sectionTag text-gray-dark-blue text-opacity-80"
+        className={`block ${mt} mb-2 font-bold text-sectionTag text-gray-dark-blue text-opacity-80`}
       >
         {label}
       </label>
@@ -61,61 +60,6 @@ const MyInput = ({
       >
         This field is required
       </span>
-    </div>
-  );
-};
-
-export default function ContactMeForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [msg, setMsg] = useState('');
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleMessageChange = (e) => {
-    setMsg(e.target.value);
-  };
-
-  const handleSendMessage = () => {
-    if (name === '' || email === '' || msg === '') {
-    } else {
-      window.alert('message sent');
-    }
-  };
-
-  return (
-    <div className="pt-8 pb-20">
-      <h1 className="section-title">Contact Me</h1>
-      <MyInput
-        label="Name"
-        placeholder="John Doe"
-        state={name}
-        setState={handleNameChange}
-      />
-      <MyInput
-        label="Email Address"
-        placeholder="email@example.com"
-        state={email}
-        setState={handleEmailChange}
-      />
-      <MyInput
-        label="Message"
-        placeholder="How can I help?"
-        useTextArea={true}
-        state={msg}
-        setState={handleMessageChange}
-      />
-      <SolidButton
-        label="SEND MESSAGE"
-        callback={handleSendMessage}
-        className="mt-6"
-      />
     </div>
   );
 }

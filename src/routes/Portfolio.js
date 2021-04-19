@@ -10,11 +10,13 @@ import insureImageLarge from '../assets/portfolio/desktop/image-portfolio-insure
 import fyloImageLarge from '../assets/portfolio/desktop/image-portfolio-fylo@2x.jpg';
 
 import SectionWithImage from '../components/SectionWithImage';
+import ContactMe from '../components/ContactMe';
 
 export default function Porfolio() {
   const isLargerThanMobile = useMediaQuery('(min-width: 640px)');
+  const isTablet = useMediaQuery('(min-width: 640px) and (max-width: 1023px)');
   return (
-    <div className="p-8 pt-0 space-y-20">
+    <div className="px-8 space-y-20 lg:px-40">
       <SectionWithImage
         image={isLargerThanMobile ? manageImageLarge : manageImage}
         title="Manage"
@@ -25,8 +27,8 @@ export default function Porfolio() {
         linkURL="/portfolio/manage"
         widthsForTablet={['w-1/2', 'w-3/8']}
         widthsForDesktop={['w-1/2', 'w-3/8']}
-        imageYPadding={true}
-        lineupImageBottomWithButton={true}
+        imageYPadding={isTablet}
+        lineupImageBottomWithButton={isTablet}
       />
       <SectionWithImage
         image={isLargerThanMobile ? bookmarkImageLarge : bookmarkImage}
@@ -38,8 +40,8 @@ export default function Porfolio() {
         linkURL="/portfolio/bookmark"
         widthsForTablet={['w-1/2', 'w-3/8']}
         widthsForDesktop={['w-1/2', 'w-3/8']}
-        imageYPadding={true}
-        lineupImageBottomWithButton={true}
+        imageYPadding={isTablet}
+        lineupImageBottomWithButton={isTablet}
         swap={true}
       />
       <SectionWithImage
@@ -52,8 +54,8 @@ export default function Porfolio() {
         linkURL="/portfolio/insure"
         widthsForTablet={['w-1/2', 'w-3/8']}
         widthsForDesktop={['w-1/2', 'w-3/8']}
-        imageYPadding={true}
-        lineupImageBottomWithButton={true}
+        imageYPadding={isTablet}
+        lineupImageBottomWithButton={isTablet}
       />
       <SectionWithImage
         image={isLargerThanMobile ? fyloImageLarge : fyloImage}
@@ -65,10 +67,11 @@ export default function Porfolio() {
         linkURL="/portfolio/fylo"
         widthsForTablet={['w-1/2', 'w-3/8']}
         widthsForDesktop={['w-1/2', 'w-3/8']}
-        imageYPadding={true}
-        lineupImageBottomWithButton={true}
+        imageYPadding={isTablet}
+        lineupImageBottomWithButton={isTablet}
         swap={true}
       />
+      <ContactMe />
     </div>
   );
 }

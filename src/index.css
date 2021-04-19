@@ -12,6 +12,9 @@
   .section-tags {
     @apply font-bold text-sectionTag font-body text-desaturated-cyan;
   }
+  .section-tags-large {
+    @apply font-bold text-sectionTagLarge font-body text-desaturated-cyan;
+  }
   .btn-label {
     @apply font-normal text-btnLabel font-body;
   }

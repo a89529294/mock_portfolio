@@ -1,24 +1,30 @@
+import { forwardRef } from 'react';
+
 import Divider from './Divider';
 import OutlineButton from './OutlineButton';
 
-export default function SectionWithImage({
-  image,
-  title,
-  body,
-  tags,
-  btnLabel,
-  linkURL,
-  widthsForTablet = [],
-  widthsForDesktop = [],
-  imageYPadding = false,
-  lineupImageBottomWithButton = false,
-  swap = false,
-}) {
+function SectionWithImage(
+  {
+    image,
+    title,
+    body,
+    tags,
+    btnLabel,
+    linkURL,
+    widthsForTablet = [],
+    widthsForDesktop = [],
+    imageYPadding = false,
+    lineupImageBottomWithButton = false,
+    swap = false,
+  },
+  ref
+) {
   return (
     <div
       className={`sm:flex sm:justify-between ${
         swap ? 'sm:flex-row-reverse' : 'sm:flex-row'
       }`}
+      ref={ref}
     >
       {image ? (
         <img
@@ -34,9 +40,11 @@ export default function SectionWithImage({
         <div
           className={`py-6 sm:h-full sm:flex sm:flex-col sm:justify-between ${
             lineupImageBottomWithButton ? 'sm:pb-12' : ''
-          } `}
+          } lg:py-24 lg:justify-center lg:space-y-6`}
         >
-          <h1 className="mb-8 section-title sm:mb-0">{title}</h1>
+          <h1 className="mb-8 section-title text-sectionTitleMedium sm:mb-0">
+            {title}
+          </h1>
           <p className="mb-6 section-body sm:mb-0 ">{body}</p>
           {tags ? (
             <p className="mb-6 section-tags">
@@ -54,3 +62,5 @@ export default function SectionWithImage({
     </div>
   );
 }
+
+export default forwardRef(SectionWithImage);

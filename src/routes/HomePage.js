@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import SolidButton from '../components/SolidButton';
 import ContactMe from '../components/ContactMe';
 import useMediaQuery from '../hooks/useMediaQuery';
@@ -10,7 +12,7 @@ import profileImageTablet from '../assets/homepage/tablet/image-homepage-profile
 import profileImageLaptop from '../assets/homepage/desktop/image-homepage-profile@2x.jpg';
 import SectionWithImage from '../components/SectionWithImage';
 
-const Hero = () => {
+const Hero = ({ aboutMeRef }) => {
   const isTablet = useMediaQuery('(min-width: 640px) and (max-width: 1023px)');
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   return (
@@ -22,11 +24,20 @@ const Hero = () => {
         alt="hero"
         className="w-full "
       />
-      <div className="sm:bg-white sm:absolute sm:bottom-0 sm:left-0 sm:w-3/4 sm:pt-14 sm:pr-14">
-        <h1 className="mt-6 mb-8 section-title sm:mb-12">
+      <div className="sm:bg-white sm:absolute sm:bottom-0 sm:left-0 sm:w-3/4 sm:pt-14 sm:pr-14 lg:w-2/5">
+        <h1 className="mt-6 mb-8 section-title sm:mb-12 sm:text-sectionTitleMedium lg:text-sectionTitleLarge">
           Hey, I’m Albert Chang and I love building beautiful websites
         </h1>
-        <SolidButton label="ABOUT ME" showImage={true} />
+        <SolidButton
+          label="ABOUT ME"
+          showImage={true}
+          callback={() => {
+            aboutMeRef.current.scrollIntoView({
+              behavior: 'smooth',
+              block: 'end',
+            });
+          }}
+        />
       </div>
     </div>
   );
@@ -35,9 +46,10 @@ const Hero = () => {
 export default function HomePage() {
   const isTablet = useMediaQuery('(min-width: 640px) and (max-width: 1023px)');
   const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const ref = useRef();
   return (
     <div className="px-8 lg:px-40">
-      <Hero />
+      <Hero aboutMeRef={ref} />
       <SectionWithImage
         image={
           isDesktop
@@ -59,6 +71,7 @@ export default function HomePage() {
         linkURL="/portfolio"
         widthsForTablet={['w-5/12', 'w-1/2']}
         widthsForDesktop={['w-1/2', 'w-3/8']}
+        ref={ref}
       />
       <ContactMe />
     </div>
